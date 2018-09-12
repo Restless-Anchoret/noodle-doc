@@ -1,0 +1,73 @@
+@startuml
+' Definitions
+
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define Enum(name,desc) class name as "desc" << (E,#3CB371) >>
+!define pk(x) <b>x</b>
+!define uq(x) <color:green>x</color>
+!define nn(x) <u>x</u>
+hide methods
+hide stereotypes
+
+
+' Entities
+
+Table(account, "account") {
+  pk(id) SERIAL
+  uq(nn(login)) VARCHAR[50]
+  nn(password_hash) VARCHAR[100]
+  nn(name) VARCHAR[100]
+  nn(last_login_date) TIMESTAMP
+  nn(registration_date) TIMESTAMP
+}
+
+Table(list, "list") {
+  pk(id) SERIAL
+  nn(title) VARCHAR[100]
+  nn(index) INTEGER
+  nn(account_id) INTEGER
+}
+
+Table(task, "task") {
+  pk(id) BIGSERIAL
+  nn(title) VARCHAR[400]
+  nn(description) VARCHAR[2000]
+  nn(status) task_status
+  parent_task_id BIGINT
+  nn(is_parent_task) BOOLEAN
+  nn(list_id) INTEGER
+  nn(index) INTEGER
+  nn(creation_date) TIMESTAMP
+  start_date TIMESTAMP
+  end_date TIMESTAMP
+  deadline TIMESTAMP
+}
+
+Enum(task_status, "task_status") {
+  TO_DO
+  IN_PROGRESS
+  DONE
+}
+
+Table(tag, "tag") {
+  pk(id) SERIAL
+  nn(name) VARCHAR[100]
+  nn(account_id) INTEGER
+}
+
+Table(task_tag, "task_tag") {
+  pk(task_id) BIGINT
+  pk(tag_id) INTEGER
+}
+
+
+' Relationships
+
+account "1" --> "0..N" list : account_id
+account "1" --> "0..N" tag : account_id
+list "1" --> "0..N" task : list_id
+task "1" --> "0..N" task : parent_task_id
+task -- task_status : status
+task "1" --> "0..N" task_tag : task_id
+tag "1" --> "0..N" task_tag : tag_id
+@enduml
