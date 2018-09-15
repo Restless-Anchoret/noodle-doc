@@ -17,7 +17,7 @@
   - Filtering by tags.
 
 
-## FULL
+## Next versions
 
 - Changing task dates (start, done, deadline).
 - Reorder tasks, lists.
@@ -32,3 +32,8 @@
     - Sort by title.
     - Sort by task status.
 - Adding, removing tags.
+- Tasks pagination.
+- Batch tasks modification (tags setting, removing, changing dates, etc.).
+- Tasks export.
+- Tasks import.
+- Moving tasks to another list, to another parent task.
