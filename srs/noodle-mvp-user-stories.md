@@ -2,13 +2,13 @@
 
 ## #1: Opening authentication page
 
-**Preconditions.**
+**Preconditions**
 - Web-application is closed.
 
-**Actions.**
+**Actions**
 - Web-application is opening first time.
 
-**Results.**
+**Results**
 - Page has header with "Noodle" title.
 - Two tabs are placed on the page: "Authentication" and "Registration".
 - Tab "Authentication" is chosen by default.
@@ -17,121 +17,121 @@
 
 ## #2: Successful authentication
 
-**Preconditions.**
+**Preconditions**
 - Authentication page is opened ("Authentication" tab is chosen).
 - At least one account should be registered before this User Story.
 
-**Actions.**
+**Actions**
 - "Login" and "Password" fields are filled with credentials of registered account.
 - Button "Sign in" is clicked.
 
-**Results.**
+**Results**
 - Signing in is successful.
 - Search view is opened.
 
 
 ## #3: Authentication failure
 
-**Preconditions.**
+**Preconditions**
 - Authentication page is opened ("Authentication" tab is chosen).
 
-**Actions.**
+**Actions**
 - "Login" and "Password" fields are filled with credentials of nonexistent account.
 - Button "Sign in" is clicked.
 
-**Results.**
+**Results**
 - Warning notification is shown with message "Incorrect login or password".
 
 
 ## #4: Authentication with empty fields
 
-**Preconditions.**
+**Preconditions**
 - Authentication page is opened ("Authentication" tab is chosen).
 
-**Actions.**
+**Actions**
 - Some of "Login" and "Password" fields are empty.
 - Button "Sign in" is clicked.
 
-**Results.**
+**Results**
 - Warning notification is shown with message "Fill in required values".
 
 
 ## #5: Opening registration page
 
-**Preconditions.**
+**Preconditions**
 - Authentication page is opened ("Authentication" tab is chosen).
 
-**Actions.**
+**Actions**
 - "Registration" tab is chosen by clicking on it.
 
-**Results.**
+**Results**
 - Registration tab is shown.
 - Three fields are placed on authentication page: "Login", "Password", "Name" - with button "Sign up".
 
 
 ## #6: Successful registration
 
-**Preconditions.**
+**Preconditions**
 - Registration page is opened ("Registration" tab is chosen).
 
-**Actions.**
+**Actions**
 - "Login", "Password" and "Name" fields are filled with credentials of new account, login should not be matching with some existing account.
 - Button "Sign up" is clicked.
 
-**Results.**
+**Results**
 - Signing up is successful.
 - Search view is opened.
 
 
 ## #7: Registration failure
 
-**Preconditions.**
+**Preconditions**
 - Registration page is opened ("Registration" tab is chosen).
 - At least one account should be registered before this User Story.
 
-**Actions.**
+**Actions**
 - "Login", "Password" and "Name" fields are filled with credentials of new account, login should be matching with existing account.
 - Button "Sign up" is clicked.
 
-**Results.**
+**Results**
 - Warning notification is shown with message "Account with this login cannot be used".
 
 
 ## #8: Registration with empty fields
 
-**Preconditions.**
+**Preconditions**
 - Registration page is opened ("Registration" tab is chosen).
 
-**Actions.**
+**Actions**
 - Some of "Login", "Password" and "Name" fields are empty.
 - Button "Sign up" is clicked.
 
-**Results.**
+**Results**
 - Warning notification is shown with message "Fill in required values".
 
 
 ## #9: Registration with week password
 
-**Preconditions.**
+**Preconditions**
 - Registration page is opened ("Registration" tab is chosen).
 
-**Actions.**
+**Actions**
 - "Login", "Password" and "Name" fields are filled with credentials of new account, login should not be matching with some existing account, password should be week.
 - Button "Sign up" is clicked.
 
-**Results.**
+**Results**
 - Warning notification is shown with message "Minimum password length is 8 symbols, both digits and letters should be used".
 
 
 ## #10: Search view is opened
 
-**Preconditions.**
+**Preconditions**
 - Authentication or registration was successfully done.
 
-**Actions.**
+**Actions**
 - Wait until search view is opened.
 
-**Results.**
+**Results**
 - Page has header with "Noodle" title at the center and links "{Name}", "Sign out" at the right ({Name} is a name of currently authenticated user).
 - Page has list of account lists at the left.
 - Each list has two buttons near its title (for edition and deletion).
@@ -143,170 +143,174 @@
 
 ## #11: Signing out
 
-**Preconditions.**
+**Preconditions**
+- Search view is opened.
 
-**Actions.**
+**Actions**
+- "Sign out" button is clicked.
 
-**Results.**
+**Results**
+- User is signing out.
+- Authentication page is opened ("Authentication" tab is chosen).
 
 
 ## #12: Opening profile settings
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #13: Successful changing profile settings
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #14: Changing profile settings failure (week password)
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #15: Changing profile settings failure (empty fields)
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #16: Creating a new list
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #17: Editing a list
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #18: Deleting a list
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #19: Choosing filter values in search view
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #20: Changing task status in search view
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #21: Choosing found task in search view
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #22: Editing task in task component
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #23: Opening task tree view
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #24: Creating task
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #25: Deleting task
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #26: Changing task status in task tree view
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #27: Choosing task in task tree view
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #28: Changing filtering option (task status) in task tree view
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
 
 
 ## #29: Hiding/showing task children
 
-**Preconditions.**
+**Preconditions**
 
-**Actions.**
+**Actions**
 
-**Results.**
+**Results**
