@@ -34,12 +34,13 @@ Table(task, "task") {
   nn(description) VARCHAR[2000]
   nn(status) task_status
   parent_task_id BIGINT
-  nn(is_parent_task) BOOLEAN
+  nn(has_children) BOOLEAN
   nn(list_id) INTEGER
   nn(index) INTEGER
   nn(creation_date) TIMESTAMP
   start_date TIMESTAMP
   end_date TIMESTAMP
+  planning_date TIMESTAMP
   deadline TIMESTAMP
 }
 
