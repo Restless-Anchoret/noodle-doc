@@ -2,7 +2,7 @@
 
 ## MVP
 
-- Accounts support, registration, authentication, JWT.
+- Accounts support, registration, authentication, JWT, changing password.
 - Account lists management.
 - Creating, deleting tasks in list root.
 - Creating, deleting subtasks.
@@ -12,16 +12,19 @@
 - Setting, removing custom tags on tasks.
 - Task tree view.
   - Filtering by task status option (show all, show undone, show done some time ago).
-- Filtered tasks view.
+  - Hiding, opening task children.
+- Search view.
   - Filtering by task status.
   - Filtering by tags.
+  - Filtering by lists.
 
 
 ## Next versions
 
-- Changing task dates (start, done, deadline).
+- Changing task dates (start, done, planning, deadline).
 - Reorder tasks, lists.
-- Filtered tasks view.
+- Key combinations for front-end.
+- Search view.
   - Filtering options.
     - Filtering by name.
     - Filtering by dates (before, after, in interval).
@@ -31,9 +34,19 @@
     - Sort by dates (creation, start, end, deadline).
     - Sort by title.
     - Sort by task status.
-- Adding, removing tags.
 - Tasks pagination.
-- Batch tasks modification (tags setting, removing, changing dates, etc.).
+- Batch tasks modification.
+  - Tags setting, removing.
+  - Changing dates.
+  - Changing task statuses.
+  - Deleting tasks.
 - Tasks export.
 - Tasks import.
 - Moving tasks to another list, to another parent task.
+- Planning view.
+  - Tasks per week, per day.
+  - Tasks drag and drop, changing planning date.
+  - Tasks planning for each hour (for antischedule).
+- Time logging.
+  - Time logs management (adding, changing, deleting).
+  - Charts with time logs per week/month etc (using different filters).
