@@ -157,22 +157,92 @@
 ## #12: Opening profile settings
 
 **Preconditions**
+- Search view is opened.
 
 **Actions**
+- "{Name}" button is clicked ({Name} is a name currently authenticated user).
 
 **Results**
+- Profile settings page is opened.
+- The same header is shown on this page.
+- "Profile settings" header is below header component.
+- Five fields are located on this page: "Login", "Name", "Old password", "New password", "Repeat new password".
+- "Login" field is disabled (cannot be edited).
+- Button "Save" is located on this page below text fields.
 
 
 ## #13: Successful changing profile settings
 
 **Preconditions**
+- Profile settings page is opened.
 
 **Actions**
+- "Name" field is modified (optionally).
+- "Old password", "New password" and "Repeat new password" fields are filled correctly (optionally).
+- Button "Save" is clicked.
 
 **Results**
+- Profile is updated successfully.
+- Password fields are empty.
+- Informal notification is shown "Profile is updated".
 
 
-## #14: Changing profile settings failure (week password)
+## #14: Changing profile settings failure (incorrect old password)
+
+**Preconditions**
+- Profile settings page is opened.
+
+**Actions**
+- "Old password" is filled with incorrect value.
+- "New password" and "Repeat new password" fields are filled with the same strong password value.
+- Button "Save" is clicked.
+
+**Results**
+- Warning notification is shown "Incorrect old password".
+
+
+## #15: Changing profile settings failure (new password mismatching)
+
+**Preconditions**
+- Profile settings page is opened.
+
+**Actions**
+- "Old password" is filled with correct value.
+- "New password" and "Repeat new password" fields are filled with different values.
+- Button "Save" is clicked.
+
+**Results**
+- Warning notification is shown "New password values mismatch".
+
+
+## #16: Changing profile settings failure (week password)
+
+**Preconditions**
+- Profile settings page is opened.
+
+**Actions**
+- "Old password" is filled with correct value.
+- "New password" and "Repeat new password" fields are filled with the same week password value.
+- Button "Save" is clicked.
+
+**Results**
+- Warning notification is shown with message "Minimum password length is 8 symbols, both digits and letters should be used".
+
+
+## #17: Changing profile settings failure (empty name)
+
+**Preconditions**
+- Profile settings page is opened.
+
+**Actions**
+- "Name" field is modified and set empty.
+- Button "Save" is clicked.
+
+**Results**
+- Warning notification is shown "Name cannot be empty".
+
+
+## #18: Creating a new list
 
 **Preconditions**
 
@@ -181,7 +251,7 @@
 **Results**
 
 
-## #15: Changing profile settings failure (empty fields)
+## #19: Editing a list
 
 **Preconditions**
 
@@ -190,7 +260,7 @@
 **Results**
 
 
-## #16: Creating a new list
+## #20: Deleting a list
 
 **Preconditions**
 
@@ -199,7 +269,7 @@
 **Results**
 
 
-## #17: Editing a list
+## #21: Choosing filter values in search view
 
 **Preconditions**
 
@@ -208,7 +278,7 @@
 **Results**
 
 
-## #18: Deleting a list
+## #22: Changing task status in search view
 
 **Preconditions**
 
@@ -217,7 +287,7 @@
 **Results**
 
 
-## #19: Choosing filter values in search view
+## #23: Choosing found task in search view
 
 **Preconditions**
 
@@ -226,7 +296,7 @@
 **Results**
 
 
-## #20: Changing task status in search view
+## #24: Editing task in task component
 
 **Preconditions**
 
@@ -235,7 +305,7 @@
 **Results**
 
 
-## #21: Choosing found task in search view
+## #25: Opening task tree view
 
 **Preconditions**
 
@@ -244,7 +314,7 @@
 **Results**
 
 
-## #22: Editing task in task component
+## #26: Creating task
 
 **Preconditions**
 
@@ -253,7 +323,7 @@
 **Results**
 
 
-## #23: Opening task tree view
+## #27: Deleting task
 
 **Preconditions**
 
@@ -262,7 +332,7 @@
 **Results**
 
 
-## #24: Creating task
+## #28: Changing task status in task tree view
 
 **Preconditions**
 
@@ -271,7 +341,7 @@
 **Results**
 
 
-## #25: Deleting task
+## #29: Choosing task in task tree view
 
 **Preconditions**
 
@@ -280,7 +350,7 @@
 **Results**
 
 
-## #26: Changing task status in task tree view
+## #30: Changing filtering option (task status) in task tree view
 
 **Preconditions**
 
@@ -289,25 +359,7 @@
 **Results**
 
 
-## #27: Choosing task in task tree view
-
-**Preconditions**
-
-**Actions**
-
-**Results**
-
-
-## #28: Changing filtering option (task status) in task tree view
-
-**Preconditions**
-
-**Actions**
-
-**Results**
-
-
-## #29: Hiding/showing task children
+## #31: Hiding/showing task children
 
 **Preconditions**
 
