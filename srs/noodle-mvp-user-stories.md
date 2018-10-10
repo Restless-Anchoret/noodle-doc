@@ -184,7 +184,7 @@
 **Results**
 - Profile is updated successfully.
 - Password fields are empty.
-- Informal notification is shown "Profile is updated".
+- Informational notification is shown "Profile is updated".
 
 
 ## #14: Changing profile settings failure (incorrect old password)
@@ -249,10 +249,12 @@
 
 **Actions**
 - Button "+" is clicked.
+- Button "Create" is clicked for empty list title.
 - New list title is entered and button "Create" is clicked.
 
 **Results**
 - Clicking button "+" causes showing dialog with title "Create list", one text field "Title" and button "Create".
+- Clicking button "Create" with empty list title causes showing warning notification "List title cannot be empty".
 - Clicking button "Create" causes new list creation and closing the dialog.
 
 
@@ -291,37 +293,81 @@
 ## #21: Choosing filter values in search view
 
 **Preconditions**
+- Search view is opened.
 
 **Actions**
+- "Lists" filter field is tried to be filled.
+- Some lists are chosen in "Lists" field.
+- "Tags" filter field is tried to be filled.
+- Some tags are chosen in "Tags" field.
+- "Status" filter field is tried to be filled.
+- Some statuses are chosen in "Status" field.
+- Button "Search" is clicked.
 
 **Results**
+- When "Lists" field is being filled, dropdown list of available lists is shown below, so that user could choose lists by clicking on them.
+- When "Tags" field is being filled, dropdown list of available tags is shown below, so that user could choose tags by clicking on them.
+- When "Status" field is being filled, dropdown list is shown below, which contains statuses "To do", "In progress", "Done".
+- When "Search" button is clicked, filtered tasks are shown below filter fields.
+- All filter options (lists, tags and statuses) are used with "or" logic operator.
+- Tasks are shown without any indents from left side (nested tasks are shown like root tasks).
+- Each task is presented as a line with task title, tags and some buttons depending on task status.
+- When task is in "To do" status, its line has white background and contains two buttons: starting button and ending button.
+- When task is in "In progress" status, its line has blue blue background and contains two buttons: ending button and button with dropdown which contains single button "Back to "To do"".
+- When task is in "Done" status, its line has white background, task title is crossed out, and line contains dropdown list with two buttons: "Back to "To do"" and "Back to "In progress"".
 
 
 ## #22: Changing task status in search view
 
 **Preconditions**
+- Search view is opened.
+- Some filters were chosen and "Search" button was clicked.
+- Some tasks were shown in the list.
 
 **Actions**
+- Status of some task is changed by clicking some button.
 
 **Results**
+- Task status is changed, task line view is changed correspondingly.
+- Depending tasks could be changed after current task status change, so if they are present in the list of filtered tasks, their views should be changed too.
+- If statuses of filtered tasks does not match to filtering options, filtered tasks list should not be changed until "Search" button is clicked again.
+- Rules of depending tasks status changes are described below in "Changing task status in task tree view" User Story.
 
 
 ## #23: Choosing found task in search view
 
 **Preconditions**
+- Search view is opened.
+- Some filters were chosen and "Search" button was clicked.
+- Some tasks were shown in the list.
 
 **Actions**
+- Some task is clicked.
 
 **Results**
+- Task content component is shown at the right of the page.
+- At the top of this component tasks hierarchy is displayed (e.g. Task1 > Task2 > Task3).
+- There are three text fields here: "Title", "Description" and "Tags".
+- Button "Save" is placed near editable fields.
+- There are also some informational fields here: "Status", "Creation date", "Start date", "Planning date", "Deadline" and "End date". 
 
 
 ## #24: Editing task in task component
 
 **Preconditions**
+- Task content component is opened.
 
 **Actions**
+- Field "Title" content is removed.
+- Button "Save" is clicked.
+- Content of fields "Title", "Description" and "Tags" is changed to correct values.
+- Button "Save" is clicked again.
 
 **Results**
+- Clicking "Save" button with empty title field causes showing warning notification "Task title cannot be empty".
+- Clicking "Save" button with nonempty title field saves new task fields.
+- If task title was changed, it should be changed in task hierarchy at the top of component and in the component at the center of the page (search view or task tree view).
+- If task tags were changed, they should be changed in the component at the center of the page (search view or task tree view).
 
 
 ## #25: Opening task tree view
