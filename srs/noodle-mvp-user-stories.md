@@ -135,7 +135,7 @@
 - Page has header with "Noodle" title at the center and links "{Name}", "Sign out" at the right ({Name} is a name of currently authenticated user).
 - Page has list of account lists at the left.
 - Each list has two buttons near its title (for edition and deletion).
-- Button "New" is present below all lists.
+- Button "+" is present below all lists.
 - Page has set of empty filter fields and button "Search" at the center.
 - There are three filter fields: "Lists", "Tags" and "Status".
 - Page has empty area at the right.
@@ -245,28 +245,47 @@
 ## #18: Creating a new list
 
 **Preconditions**
+- Search view is opened.
 
 **Actions**
+- Button "+" is clicked.
+- New list title is entered and button "Create" is clicked.
 
 **Results**
+- Clicking button "+" causes showing dialog with title "Create list", one text field "Title" and button "Create".
+- Clicking button "Create" causes new list creation and closing the dialog.
 
 
 ## #19: Editing a list
 
 **Preconditions**
+- Search view is opened.
+- At least one list is presented in current account.
 
 **Actions**
+- Edit button is clicked near presented list.
+- List title is removed from title field and "Save" button is tried to be clicked.
+- New list title is entered in title field and "Save" button is clicked.
 
 **Results**
+- Clicking edit button causes showing dialog with title "Edit list", one text field "Title" and button "Save".
+- Clicking "Save" button with empty title field causes showing warning notification "List title cannot be empty".
+- Clicking "Save" button with corrected title field causes saving list title and closing the dialog.
 
 
 ## #20: Deleting a list
 
 **Preconditions**
+- Search view is opened.
+- At least one list is presented in current account.
 
 **Actions**
+- Deleting button is clicked near presented list.
+- Button "Delete" is clicked in the dialog.
 
 **Results**
+- Clicking deleting button causes showing dialog with title "Delete list", two buttons "Delete" and "Cancel", message "Are you sure you want to delete this list? All tasks from it will be deleted and can no longer be restored."
+- Clicking "Delete" button causes deleting list and closing dialog.
 
 
 ## #21: Choosing filter values in search view
