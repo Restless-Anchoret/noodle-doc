@@ -5,7 +5,6 @@
 - JavaScript
 - Node.js
 - Express
-- RxJS
 - Postgresql
 
 ## Frontend
