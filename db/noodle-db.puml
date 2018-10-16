@@ -17,8 +17,8 @@ Table(account, "account") {
   uq(nn(login)) VARCHAR[50]
   nn(password_hash) VARCHAR[100]
   nn(name) VARCHAR[100]
-  nn(last_login_date) TIMESTAMP
-  nn(registration_date) TIMESTAMP
+  nn(last_login_date) TIMESTAMPTZ
+  nn(registration_date) TIMESTAMPTZ
 }
 
 Table(list, "list") {
@@ -37,11 +37,11 @@ Table(task, "task") {
   nn(has_children) BOOLEAN
   nn(list_id) INTEGER
   nn(index) INTEGER
-  nn(creation_date) TIMESTAMP
-  start_date TIMESTAMP
-  end_date TIMESTAMP
-  planning_date TIMESTAMP
-  deadline TIMESTAMP
+  nn(creation_date) TIMESTAMPTZ
+  start_date TIMESTAMPTZ
+  end_date TIMESTAMPTZ
+  planning_date TIMESTAMPTZ
+  deadline TIMESTAMPTZ
 }
 
 Enum(task_status, "task_status") {
