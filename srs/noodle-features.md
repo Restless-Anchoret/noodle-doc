@@ -21,6 +21,7 @@
 
 ## Next versions
 
+- Capcha.
 - Changing task dates (start, done, planning, deadline).
 - Reorder tasks, lists.
 - Key combinations for front-end.
