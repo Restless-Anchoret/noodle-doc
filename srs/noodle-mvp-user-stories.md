@@ -132,7 +132,7 @@
 - Wait until search view is opened.
 
 **Results**
-- Page has header with "Noodle" title at the center and links "{Name}", "Sign out" at the right ({Name} is a name of currently authenticated user).
+- Page has header with "Noodle" title and the link to Search view at the left and links "{Name}", "Sign out" at the right ({Name} is a name of currently authenticated user).
 - Page has list of account lists at the left.
 - Each list has two buttons near its title (for edition and deletion).
 - Button "+" is present below all lists.
@@ -160,14 +160,14 @@
 - Search view is opened.
 
 **Actions**
-- "{Name}" button is clicked ({Name} is a name currently authenticated user).
+- "{Name}" button is clicked ({Name} is a name of currently authenticated user).
 
 **Results**
 - Profile settings page is opened.
 - The same header is shown on this page.
 - "Profile settings" header is below header component.
 - Five fields are located on this page: "Login", "Name", "Old password", "New password", "Repeat new password".
-- "Login" field is disabled (cannot be edited).
+- "Login" field is not editable.
 - Button "Save" is located on this page below text fields.
 
 
@@ -248,7 +248,7 @@
 - Search view is opened.
 
 **Actions**
-- Button "+" is clicked.
+- Button "+" below lists is clicked.
 - Button "Create" is clicked for empty list title.
 - New list title is entered and button "Create" is clicked.
 
@@ -296,11 +296,8 @@
 - Search view is opened.
 
 **Actions**
-- "Lists" filter field is tried to be filled.
 - Some lists are chosen in "Lists" field.
-- "Tags" filter field is tried to be filled.
 - Some tags are chosen in "Tags" field.
-- "Status" filter field is tried to be filled.
 - Some statuses are chosen in "Status" field.
 - Button "Search" is clicked.
 
@@ -309,11 +306,12 @@
 - When "Tags" field is being filled, dropdown list of available tags is shown below, so that user could choose tags by clicking on them.
 - When "Status" field is being filled, dropdown list is shown below, which contains statuses "To do", "In progress", "Done".
 - When "Search" button is clicked, filtered tasks are shown below filter fields.
-- All filter options (lists, tags and statuses) are used with "or" logic operator.
+- Lists and statuses, chosen for filtering, are used with "or" logic operator. Tags, chosen for filtering, are used with "and" logic operator.
 - Tasks are shown without any indents from left side (nested tasks are shown like root tasks).
+- Filtered tasks should be ordered following the next rule. Tasks from the same list should follow the order of DFS, choosing parent first.
 - Each task is presented as a line with task title, tags and some buttons depending on task status.
 - When task is in "To do" status, its line has white background and contains two buttons: starting button and ending button.
-- When task is in "In progress" status, its line has blue blue background and contains two buttons: ending button and button with dropdown which contains single button "Back to "To do"".
+- When task is in "In progress" status, its line has blue background and contains two buttons: ending button and button with dropdown which contains single button "Back to "To do"".
 - When task is in "Done" status, its line has white background, task title is crossed out, and line contains dropdown list with two buttons: "Back to "To do"" and "Back to "In progress"".
 
 
@@ -329,9 +327,7 @@
 
 **Results**
 - Task status is changed, task line view is changed correspondingly.
-- Depending tasks could be changed after current task status change, so if they are present in the list of filtered tasks, their views should be changed too.
-- If statuses of filtered tasks does not match to filtering options, filtered tasks list should not be changed until "Search" button is clicked again.
-- Rules of depending tasks status changes are described below in "Changing task status in task tree view" User Story.
+- If statuses of filtered tasks does not match to filtering options after status change, filtered tasks list should not be changed until "Search" button is clicked again.
 
 
 ## #23: Choosing found task in search view
@@ -349,7 +345,7 @@
 - At the top of this component tasks hierarchy is displayed (e.g. Task1 > Task2 > Task3).
 - There are three text fields here: "Title", "Description" and "Tags".
 - Button "Save" is placed near editable fields.
-- There are also some informational fields here: "Status", "Creation date", "Start date", "Planning date", "Deadline" and "End date". 
+- There are also some informational fields here: "Status", "Creation date", "Start date" and "End date". 
 
 
 ## #24: Editing task in task component
