@@ -344,7 +344,7 @@
 - Task content component is shown at the right of the page.
 - At the top of this component tasks hierarchy is displayed (e.g. Task1 > Task2 > Task3).
 - There are three text fields here: "Title", "Description" and "Tags".
-- Button "Save" is placed near editable fields.
+- Buttons "Save" and "Delete task" are placed near editable fields.
 - There are also some informational fields here: "Status", "Creation date", "Start date" and "End date". 
 
 
@@ -366,64 +366,112 @@
 - If task tags were changed, they should be changed in the component at the center of the page (search view or task tree view).
 
 
-## #25: Opening task tree view
+## #25: Deleting task
 
 **Preconditions**
+- Task content component is opened.
 
 **Actions**
+- Button "Delete task" is clicked.
 
 **Results**
+- Task is deleted from the list.
+- Task content component is empty.
+- Task is removed from the component at center of the page (search view or task tree view).
 
 
-## #26: Creating task
+## #26: Opening task tree view
 
 **Preconditions**
+- Search view is opened.
+- At least one list is presented in current account.
+- Presented list contains some hierarchy of nested tasks.
 
 **Actions**
+- Link to presented list is clicked.
 
 **Results**
+- Fields with filtering options of search view are hidden.
+- Task tree view is opened.
+- Single filtering field is present below page header (contains "Done less than 10 days ago" by default). Button "Filter" is placed near filtering field.
+- Tasks of the chosen list are present in the view, their hierarchy is shown. Nested task lines have corresponding indents.
+- Each task is presented as a line with task title, tags and some buttons depending on task status (the same rules at in "Choosing filter values in search view" User Story). In addition to this, tasks with children have dropdown button at the beginning of their lines. Also each line contains "+" button for adding new subtask.
+- Also "+" button is present below all existing tasks for adding new root task.
 
 
-## #27: Deleting task
+## #27: Creating task
 
 **Preconditions**
+- Task tree view is opened.
+- Some tasks are present in the chosen list.
 
 **Actions**
+- "+" button is clicked (below all tasks or at the line of some task).
+- Button "Create" is clicked.
+- New task title is entered.
+- Button "Create" is clicked.
 
 **Results**
+- Clicking button "+" causes showing dialog with title "Create task", one text field "Title" and button "Create".
+- Clicking button "Create" with empty task title causes showing warning notification "Task title cannot be empty".
+- Clicking button "Create" causes new task creation and closing the dialog.
+- Created task is shown in task tree view.
 
 
 ## #28: Changing task status in task tree view
 
 **Preconditions**
+- Task tree view is opened.
+- Some tasks are present in the chosen list.
 
 **Actions**
+- Status of some task is changed by clicking some button.
 
 **Results**
+- Task status is changed, task line view is changed correspondingly.
+- Task status changes does not imply on other task statuses.
+- If task status does not match with filtering option, it is still present in the view, until "Filter" button is clicked.
 
 
 ## #29: Choosing task in task tree view
 
 **Preconditions**
+- Task tree view is opened.
+- Some tasks are present in the chosen list.
 
 **Actions**
+- Some task is chosen by clicking on its title.
 
 **Results**
+- Task content component is shown on the right side of page. It contains the same elements as it was described in "Choosing found task in search view" User Story.
 
 
 ## #30: Changing filtering option (task status) in task tree view
 
 **Preconditions**
+- Task tree view is opened.
+- Some tasks are present in the chosen list.
 
 **Actions**
+- Dropdown is opened under filtering field.
+- Some of filtering options is chosen.
+- "Filter" button is clicked.
 
 **Results**
+- Dropdown list contains three options: "Done less than 10 days ago" (chosen by default), "Only undone", "All".
+- Task tree view is updated and now contains only filtered tasks.
+- If some task with "Done" status contains undone subtasks, it should be displayed anyway (this behavior could be changed in next versions; maybe parent task status shouldn't be changed manually).
 
 
 ## #31: Hiding/showing task children
 
 **Preconditions**
+- Task tree view is opened.
+- Some tasks are present in the chosen list, including nested tasks.
 
 **Actions**
+- Dropdown link is clicked near some parent task twice.
 
 **Results**
+- All current task subtasks are hidden when link is clicked for the first time.
+- Subtasks are shown again when link is clicked for the second time.
