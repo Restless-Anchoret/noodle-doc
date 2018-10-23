@@ -53,22 +53,15 @@ Enum(task_status, "task_status") {
 Table(tag, "tag") {
   pk(id) SERIAL
   nn(name) VARCHAR[100]
-  nn(account_id) INTEGER
-}
-
-Table(task_tag, "task_tag") {
-  pk(task_id) BIGINT
-  pk(tag_id) INTEGER
+  nn(task_id) INTEGER
 }
 
 
 ' Relationships
 
 account "1" --> "0..N" list : account_id
-account "1" --> "0..N" tag : account_id
 list "1" --> "0..N" task : list_id
 task "1" --> "0..N" task : parent_task_id
 task -- task_status : status
-task "1" --> "0..N" task_tag : task_id
-tag "1" --> "0..N" task_tag : tag_id
+task "1" --> "0..N" tag : task_id
 @enduml
