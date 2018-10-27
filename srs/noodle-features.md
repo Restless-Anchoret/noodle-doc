@@ -22,6 +22,9 @@
 ## Next versions
 
 - Captcha.
+- Logging.
+  - More detailed logs.
+  - Storing logs in files.
 - Changing task dates (start, done, planning, deadline).
 - Reorder tasks, lists.
 - Key combinations for front-end.
